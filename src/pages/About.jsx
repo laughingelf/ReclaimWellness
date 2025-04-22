@@ -1,9 +1,15 @@
+import Navbar from "./components/Navbar";
 
 
 const About = () => {
 
     return (
-        <h1 className="text-red-600">About</h1>
+
+        <>
+        <Navbar/>
+            <h1 className="text-red-600">About</h1>
+        
+        </>
     )
 }
 

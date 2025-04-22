@@ -1,9 +1,14 @@
+import Navbar from "./components/Navbar";
 
 
 const NoPage = () => {
 
     return (
-        <h1>404 Error</h1>
+
+        <>
+        <Navbar/>
+            <h1>404 Error</h1>
+        </>
     )
 }
 
