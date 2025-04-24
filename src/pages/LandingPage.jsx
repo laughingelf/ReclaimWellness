@@ -1,6 +1,8 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import {Link} from 'react-router-dom'
+import Sponsor from "./components/Sponsor";
+import Footer from "./components/Footer";
 
 const LandingPage = () => {
 
@@ -21,6 +23,9 @@ const LandingPage = () => {
                     <br/>
                     <p>EIN # 93-2642672</p>
                     <p>This is a 501c(3) company. All donations are tax-deductible.</p>
+                    <div className="mt-6">
+                        <Link id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
+                    </div>
                 </div>
             </section>
             <section className="text-black px-4 py-8 mx-4 bg-white rounded-lg shadow-lg shadow-black">
@@ -66,6 +71,10 @@ const LandingPage = () => {
                         alt="Therapeutic Head Massage"
                         className="w-full h-auto rounded-lg shadow-lg shadow-gray-600"
                     />
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-4">
+                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/contact'>Contact Us Today</Link>
+                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/about'>Learn More</Link>
                     </div>
                 </div>
             </section>
@@ -162,10 +171,10 @@ const LandingPage = () => {
             <section id="open-hours" className="flex flex-row justify-center items-center mb-12">
                 <div id="open-time" className="px-8 text-black">
                     <h3 className="text-3xl mb-4 underline">Open Hours:</h3>
-                    <p className="text-left text-sm">Feeling exhausted or overwhelmed after a long day? Reclaim Wellness offers appointment-only, 
+                    {/* <p className="text-left text-sm">Feeling exhausted or overwhelmed after a long day? Reclaim Wellness offers appointment-only, 
                         trauma-informed care and therapeutic services designed to help you restore balance, reduce 
                         stress, and promote overall well-being.
-                    </p>
+                    </p> */}
                     <ul className="list-disc pl-5 text-base text-left mt-4">
                         <li><strong>Mon–Fri:</strong> 10am – 7pm</li>
                         <li><strong>Sat:</strong> 10am – 5pm</li>
@@ -175,9 +184,9 @@ const LandingPage = () => {
                 </div>
                 <img id="booking-img" src="/img/book-img.png" className="shadow-lg shadow-gray-500 rounded-sm" />
                 <div className="relative">
-                    <div id="contact-massage" className="bg-gray-500 py-20 px-12 shadow-lg shadow-gray-600 rounded-sm -translate-x-16 relative z-10">
-                        <h3 className="text-4xl w-72 mb-8">Contact Us to Schedule and Appointment</h3>
-                        <Link to='/contact' id='learn-btn' className='px-12 py-2 relative z-10'>Contact Us</Link>
+                    <div id="contact-massage" className="bg-gray-500 py-20 px-12 shadow-lg shadow-gray-600 rounded-xl -translate-x-16 relative z-10">
+                        <h3 className="text-4xl w-72 mb-8">Contact Us to Schedule an Appointment</h3>
+                        <Link to='/contact' id='learn-btn' className='px-12 py-2 relative z-10 rounded-lg'>Contact Us</Link>
 
                         <img 
                             src="/img/btm-flower.svg" 
@@ -187,6 +196,8 @@ const LandingPage = () => {
                     </div>
                 </div>
             </section>
+            <Sponsor/>
+            <Footer/>
 
 
         

@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage'
 import NoPage from './pages/NoPage'
 import Services from './pages/Services'
 import './App.css'
+import Donate from './pages/Donate'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/about' element={<About/>} />
           <Route path='/services' element={<Services/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/donate' element={<Donate/>} />
           <Route path='*' element={<NoPage/>} />
         </Routes>
       </BrowserRouter>
