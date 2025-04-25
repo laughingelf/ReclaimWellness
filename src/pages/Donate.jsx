@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Sponsor from "./components/Sponsor";
 
 
 const Donate = () => {
@@ -6,7 +7,7 @@ const Donate = () => {
     return (
         <>
         <Navbar/>
-            <h1>Donate</h1>
+            <Sponsor/>
         
         </>
     )

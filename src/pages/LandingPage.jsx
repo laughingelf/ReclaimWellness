@@ -23,8 +23,13 @@ const LandingPage = () => {
                     <br/>
                     <p>EIN # 93-2642672</p>
                     <p>This is a 501c(3) company. All donations are tax-deductible.</p>
-                    <div className="mt-6">
-                        <Link id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
+                    <div className="mt-8 flex flex-col gap-10">
+                        <div className=" ">
+                            <Link id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
+                        </div>
+                        <div>
+                            <Link id='learn-btn' className='px-31 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Donate</Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -73,101 +78,45 @@ const LandingPage = () => {
                     />
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
-                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/contact'>Contact Us Today</Link>
-                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/about'>Learn More</Link>
+                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/contact'>Contact Us Today</Link>
+                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/services'>Services</Link>
                     </div>
                 </div>
             </section>
-            <section className="my-16 px-4 text-black">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Card 1 */}
-                    <div className="relative overflow-hidden flex flex-col justify-between items-center bg-gray-500 rounded-xl shadow-md shadow-gray-500 p-6 text-center hover:shadow-lg transition min-h-[300px]">
-                          {/* Top-left decorative image */}
-                        <img
-                            src="/img/top-flower.svg"
-                            alt=""
-                            aria-hidden="true"
-                            className="absolute top-0 left-0 w-75 h-75 -translate-x-8 -translate-y-4 z-0"
-                        />
+            <section class="bg-[#8ED4CC] text-black mt-12 py-12 px-6 mx-3  md:px-24 rounded-lg shadow-md shadow-gray-500 mb-16 text-left hover:shadow-lg transition">
+                <h2 class="text-3xl font-bold mb-6 text-center underline">Affordable Healing Services for Veterans & Low-Income Clients</h2>
+                
+                <p class="mb-4">
+                    At <strong>Reclaim Wellness</strong>, we’re committed to making trauma-informed massage therapy accessible to those who need it most. Our services are provided at no cost to qualifying individuals, including <strong>veterans</strong> and those experiencing <strong>financial hardship</strong>.
+                </p>
 
-                        {/* Bottom-right decorative image */}
-                        <img
-                            src="/img/btm-flower.svg"
-                            alt=""
-                            aria-hidden="true"
-                            className="absolute bottom-0 right-0 w-75 h-75 z-0"
-                        />
-                        <div id="card-main-txt" className="relative z-10 flex-1 flex items-center justify-center text-center">
-                            <h3 className="text-5xl font-bold">Trauma-Informed Massage</h3>
-                        </div>
-                        <Link
-                        id='learn-btn' 
-                        to="/services" 
-                        className="z-10 mt-auto w-full py-4 px-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition"
-                        >
-                        Learn More
-                        </Link>
-                    </div>
+                <p class="mb-4">
+                    To qualify for free services, clients must submit one of the following:
+                </p>
 
-                    {/* Card 2 */}
-                    <div className="relative overflow-hidden flex flex-col justify-between items-center bg-gray-500 rounded-xl shadow-md shadow-gray-500 p-6 text-center hover:shadow-lg transition min-h-[300px]">
-                          {/* Top-left decorative image */}
-                        <img
-                            src="/img/top-flower.svg"
-                            alt=""
-                            aria-hidden="true"
-                            className="absolute top-0 left-0 w-75 h-75 -translate-x-8 -translate-y-4 z-0"
-                        />
+                <ul class="list-disc list-inside mb-4">
+                    <li>A copy of your <strong>DD214</strong> (for veterans)</li>
+                    <li>A recent <strong>tax return</strong></li>
+                    <li><strong>Proof of SNAP benefits</strong> approval</li>
+                    <li>A <strong>referral letter</strong> from a licensed mental health provider explaining the need</li>
+                </ul>
 
-                        {/* Bottom-right decorative image */}
-                        <img
-                            src="/img/btm-flower.svg"
-                            alt=""
-                            aria-hidden="true"
-                            className="absolute bottom-0 right-0 w-75 h-75 z-0"
-                        />
-                        <div id="card-main-txt" className="relative z-10 flex-1 flex items-center justify-center text-center">
-                            <h3 className="text-5xl font-bold">Somatic Movement Massage</h3>
-                        </div>
-                        <Link
-                        id='learn-btn' 
-                        to="/services" 
-                        className="z-10 mt-auto w-full py-4 px-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition"
-                        >
-                        Learn More
-                        </Link>
-                    </div>
+                <p class="mb-4">
+                    If you do not qualify for our nonprofit program, you can still schedule an appointment through our for-profit partner site:
+                    <a href="https://www.eliteorthobodywork.com" class="text-blue-700 underline hover:text-blue-900" target="_blank" rel="noopener noreferrer">
+                    www.eliteorthobodywork.com
+                    </a>
+                </p>
 
-                    {/* Card 3 */}
-                    <div className="relative overflow-hidden flex flex-col justify-between items-center bg-gray-500 rounded-xl shadow-md shadow-gray-500 p-6 text-center hover:shadow-lg transition min-h-[300px]">
-                          {/* Top-left decorative image */}
-                        <img
-                            src="/img/top-flower.svg"
-                            alt=""
-                            aria-hidden="true"
-                            className="absolute top-0 left-0 w-75 h-75 -translate-x-8 -translate-y-4 z-0"
-                        />
-
-                        {/* Bottom-right decorative image */}
-                        <img
-                            src="/img/btm-flower.svg"
-                            alt=""
-                            aria-hidden="true"
-                            className="absolute bottom-0 right-0 w-75 h-75 z-0"
-                        />
-                        <div id="card-main-txt" className="relative z-10 flex-1 flex items-center justify-center text-center">
-                            <h3 className="text-5xl font-bold">Deep Relaxation Massage</h3>
-                        </div>
-                        <Link
-                        id='learn-btn' 
-                        to="/services" 
-                        className="z-10 mt-auto w-full py-4 px-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition"
-                        >
-                        Learn More
-                        </Link>
-                    </div>
+                <p><em>Note: Funding is limited and free services are offered on a case-by-case basis depending on need and available resources.</em></p>
+                <div className="text-center mt-6 bg-white max-w-xs mx-auto px-6 py-3 rounded shadow-md shadow-gray-500 hover:shadow-lg transition">
+                    <Link to="/contact" className="text-blue-600 text-lg font-semibold">
+                        Check Availability
+                    </Link>
                 </div>
+
             </section>
+            
             <section id="open-hours" className="flex flex-row justify-center items-center mb-12">
                 <div id="open-time" className="px-8 text-black">
                     <h3 className="text-3xl mb-4 underline">Open Hours:</h3>
@@ -196,7 +145,7 @@ const LandingPage = () => {
                     </div>
                 </div>
             </section>
-            <Sponsor/>
+            {/* <Sponsor/> */}
             <Footer/>
 
 
