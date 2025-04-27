@@ -11,6 +11,9 @@ const About = () => {
         <Navbar/>
             
         <section class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+            <div style={{fontFamily: 'Gwendolyn, cursive'}} className="mt-6 text-black text-6xl md:text-7xl">
+                <h1 className="bg-gray-400 w-fit mx-auto px-12 py-3 rounded-lg shadow-md shadow-white">Check Out Our Staff</h1>
+            </div>
             {/* <!-- Profile 1 --> */}
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <img src="/img/nina.webp" alt="Person 1"
@@ -25,7 +28,7 @@ const About = () => {
                 to help my clients through their healing journey with touch therapy. 
                 </p>
                     <div className="mt-6">
-                        <Link className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Contact Us</Link>
+                        <Link onClick={() => window.scrollTo(0, 0)} className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Check Availability</Link>
                     </div>
                 </div>
             </div>
@@ -43,7 +46,7 @@ const About = () => {
                 My goal is to help people find relief, comfort, and a renewed sense of well-being.
                 </p>
                     <div className="mt-6">
-                        <Link className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Contact Us</Link>
+                        <Link onClick={() => window.scrollTo(0, 0)} className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Check Availability</Link>
                     </div>
                 </div>
             </div>
@@ -63,7 +66,7 @@ const About = () => {
                 This is a 501c3 organization and any donated service is tax-deductible.
                 </p>
                 <div className="mt-6">
-                    <Link className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Contact Us</Link>
+                    <Link onClick={() => window.scrollTo(0, 0)} className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Contact Us</Link>
                 </div>
                 </div>
             </div>

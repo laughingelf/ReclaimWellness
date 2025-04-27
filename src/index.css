@@ -48,8 +48,17 @@
   text-shadow: 0 0 15px black;
 }
 
-/* #contact-massage {
-  background-color: aliceblue;
+/* .form-group {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.form-group input {
+  background-color: rgb(211, 205, 205);
+  width: 250px;
+  margin-left: 4px;
 } */
 
 @media (max-width: 1220px) {

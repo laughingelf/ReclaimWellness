@@ -59,7 +59,7 @@ const ServicesSection = () => {
                   id='learn-btn'
                   className="z-10 mt-auto w-full py-4 px-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition bg-white font-semibold"
                 >
-                  {openIndex === index ? "Hide Info" : "Learn More"}
+                  {openIndex === index ? "Close" : "Learn More"}
                 </button>
               </div>
 

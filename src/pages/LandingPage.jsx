@@ -25,10 +25,10 @@ const LandingPage = () => {
                     <p>This is a 501c(3) company. All donations are tax-deductible.</p>
                     <div className="mt-8 flex flex-col gap-10">
                         <div className=" ">
-                            <Link id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
+                            <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
                         </div>
                         <div>
-                            <Link id='learn-btn' className='px-31 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Donate</Link>
+                            <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-31 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Donate</Link>
                         </div>
                     </div>
                 </div>
@@ -78,8 +78,8 @@ const LandingPage = () => {
                     />
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
-                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/contact'>Contact Us Today</Link>
-                        <Link id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/services'>Services</Link>
+                        <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/contact'>Contact Us Today</Link>
+                        <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/services'>Services</Link>
                     </div>
                 </div>
             </section>
@@ -110,7 +110,7 @@ const LandingPage = () => {
 
                 <p><em>Note: Funding is limited and free services are offered on a case-by-case basis depending on need and available resources.</em></p>
                 <div className="text-center mt-6 bg-white max-w-xs mx-auto px-6 py-3 rounded shadow-md shadow-gray-500 hover:shadow-lg transition">
-                    <Link to="/contact" className="text-blue-600 text-lg font-semibold">
+                    <Link onClick={() => window.scrollTo(0, 0)} to="/contact" className="text-blue-600 text-lg font-semibold">
                         Check Availability
                     </Link>
                 </div>
@@ -135,7 +135,7 @@ const LandingPage = () => {
                 <div className="relative">
                     <div id="contact-massage" className="bg-gray-500 py-20 px-12 shadow-lg shadow-gray-600 rounded-xl -translate-x-16 relative z-10">
                         <h3 className="text-4xl w-72 mb-8">Contact Us to Schedule an Appointment</h3>
-                        <Link to='/contact' id='learn-btn' className='px-12 py-2 relative z-10 rounded-lg'>Contact Us</Link>
+                        <Link onClick={() => window.scrollTo(0, 0)} to='/contact' id='learn-btn' className='px-12 py-2 relative z-10 rounded-lg'>Contact Us</Link>
 
                         <img 
                             src="/img/btm-flower.svg" 

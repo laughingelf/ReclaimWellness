@@ -10,11 +10,11 @@ const Footer = () => {
                 <div>
                 <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2">
-                    <li><Link to='/home' className="hover:underline">Home</Link></li>
-                    <li><Link to="/about" className="hover:underline">Staff</Link></li>
-                    <li><Link to="/services" className="hover:underline">Services</Link></li>
-                    <li><Link to="/donate" className="hover:underline">Donate</Link></li>
-                    <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+                    <li><Link onClick={() => window.scrollTo(0, 0)} to='/home' className="hover:underline">Home</Link></li>
+                    <li><Link onClick={() => window.scrollTo(0, 0)} to="/about" className="hover:underline">Staff</Link></li>
+                    <li><Link onClick={() => window.scrollTo(0, 0)} to="/services" className="hover:underline">Services</Link></li>
+                    <li><Link onClick={() => window.scrollTo(0, 0)} to="/donate" className="hover:underline">Donate</Link></li>
+                    <li><Link onClick={() => window.scrollTo(0, 0)} to="/contact" className="hover:underline">Contact</Link></li>
                 </ul>
                 </div>
 

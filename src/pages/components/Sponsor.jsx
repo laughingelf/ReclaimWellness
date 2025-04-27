@@ -24,7 +24,7 @@ const Sponsor = () => {
                 <p className="mb-2 text-md font-semibold">💸 Donation: $60/month or $250 one-time</p>
                 <p className="text-md font-semibold mb-4">✨ 100% of proceeds go directly to a Veteran’s healing services.</p>
                 <br/>
-                <Link id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
+                <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
             </div>
         </section>
 

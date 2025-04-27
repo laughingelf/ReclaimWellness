@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="w-full px-6 py-4 flex justify-between items-center bg-white shadow-md">
       {/* Logo / Image */}
       {/* <div className="flex flex-row items-center"> */}
-        <Link className='flex items-center' to='/home'>
+        <Link onClick={() => window.scrollTo(0, 0)} className='flex items-center' to='/home'>
           <img src='/img/nav-flower2.svg' className='w-10 h-10'/>
           <h3 className='text-2xl' style={{fontFamily: 'Gwendolyn, cursive', fontWeight: '700', color: 'black'}}>Reclaim Wellness</h3>
         </Link>
@@ -16,11 +16,11 @@ const Navbar = () => {
 
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-6 text-black font-semibold">
-        <Link to="/">Home</Link>
-        <Link to="/about">Staff</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/donate">Donate</Link>
-        <Link to="/contact">Contact</Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/">Home</Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/about">Staff</Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/services">Services</Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/donate">Donate</Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/contact">Contact</Link>
       </div>
 
       {/* Mobile Menu Button */}

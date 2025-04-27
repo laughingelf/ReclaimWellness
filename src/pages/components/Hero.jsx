@@ -12,7 +12,7 @@ const Hero = () => {
 
             <img 
             src="/img/vet-owned.webp" 
-            alt="Top Right Icon"
+            alt="Veteran Owned Logo"
             className="absolute top-4 right-4 w-32 h-32 md:w-48 md:h-48 z-10"
             />
 
@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="bg-black/40 absolute inset-0 flex flex-col items-center justify-center text-white-900 text-center px-4">
                 <h1 style={{fontFamily: "Love Light, cursive"}} className="text-7xl md:text-9xl  font-bold mb-2">Reclaim Wellness</h1>
                 <h2 className="text-3xl md:text-2xl font-medium mb-16">Trauma Focused Care</h2>
-                <Link id='learn-btn' className='px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/contact'>Book an Appointment</Link>
+                <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/contact'>Book an Appointment</Link>
             </div>
         </section>
 
