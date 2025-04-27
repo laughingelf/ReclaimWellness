@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
+import HeroAbout from "./components/HeroAbout";
 
 
 const About = () => {
@@ -10,10 +11,36 @@ const About = () => {
         <>
         <Navbar/>
             
-        <section class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-            <div style={{fontFamily: 'Gwendolyn, cursive'}} className="mt-6 text-black text-6xl md:text-7xl">
-                <h1 className="bg-gray-400 w-fit mx-auto px-12 py-3 rounded-lg shadow-md shadow-white">Check Out Our Staff</h1>
-            </div>
+        <section class="max-w-6xl mx-auto px-6 py-0 space-y-12">
+            {/* <div style={{fontFamily: 'Gwendolyn, cursive'}} className="mt-6 text-black text-6xl md:text-7xl w-fit mx-auto rounded-lg shadow-md hover:shadow-lg transition shadow-gray-800">
+                <div className="relative mt-6 text-black text-6xl md:text-7xl overflow-hidden" style={{ fontFamily: 'Gwendolyn, cursive' }}>
+    
+                  
+                    <img 
+                        src="/img/top-flower.svg" 
+                        alt="" 
+                        className="absolute top-0 left-0 w-38 h-38 -translate-x-2 z-5 -translate-y-2 pointer-events-none opacity-70" 
+                        aria-hidden="true"
+                    />
+
+                   
+                    <img 
+                        src="/img/btm-flower.svg" 
+                        alt="" 
+                        className="absolute bottom-0 right-0 w-38 h-38 -translate-x-0 z-5 translate-y-0 pointer-events-none opacity-70"
+                        aria-hidden="true"
+                    />
+
+                    
+                    <h1 className="bg-gray-500 w-fit mx-auto px-12 py-3 rounded-lg  relative z-3">
+                        Check Out Our Staff
+                    </h1>
+
+                </div>
+
+            </div> */}
+
+            <HeroAbout/>
             {/* <!-- Profile 1 --> */}
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <img src="/img/nina.webp" alt="Person 1"

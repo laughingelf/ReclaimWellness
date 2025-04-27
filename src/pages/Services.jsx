@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ServicesSection from "./components/ServiceSect";
 import { Link } from "react-router-dom";
+import HeroService from "./components/HeroService";
 
 
 const Services = () => {
@@ -10,6 +11,7 @@ const Services = () => {
 
         <>
         <Navbar/>
+        <HeroService/>
         <section class="max-w-7xl mx-auto px-6 py-16">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 
@@ -29,7 +31,7 @@ const Services = () => {
 
                 {/* <!-- Services List --> */}
                 <div class="w-full md:w-1/2 text-black bg-white p-6 rounded-lg shadow-md shadow-gray-500">
-                <h2 class="text-4xl font-bold mb-6">Our Services</h2>
+                {/* <h2 class="text-4xl font-bold mb-6">Our Services</h2> */}
                 <ServicesSection/>
                 </div>
             </div>

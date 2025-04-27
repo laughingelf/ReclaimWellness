@@ -1,30 +1,30 @@
 import { Link } from "react-router-dom"
 
-const Hero = () => {
+const HeroService = () => {
 
     return (
-        <section className="relative w-full h-[75vh] shadow-lg shadow-gray-500">
+        <section className="relative w-full h-[25vh] md:h-[30vh] shadow-lg shadow-gray-500">
             <img 
                 src="/img/rws-hero2.png"
                 className="w-full h-full object-cover"
                 alt="Hero"
             />
 
-            <img 
+            {/* <img 
             src="/img/vet-owned.webp" 
             alt="Veteran Owned Logo"
             className="absolute top-4 right-4 w-32 h-32 md:w-48 md:h-48 z-10"
-            />
+            /> */}
 
               {/* Centered Text Overlay */}
             <div className="bg-black/40 absolute inset-0 flex flex-col items-center justify-center text-white-900 text-center px-4">
-                <h1 style={{fontFamily: "Love Light, cursive"}} className="text-7xl md:text-9xl text-shadow-lg/50 font-bold mb-2">Reclaim Wellness</h1>
-                <h2 className="text-3xl md:text-2xl font-medium mb-16">Trauma Focused Care</h2>
-                <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-12 py-4 rounded-lg hover:shadow-md hover:shadow-white' to='/contact'>Book an Appointment</Link>
+                <h1 style={{fontFamily: 'Gwendolyn, cursive'}}
+                className='text-6xl md:text-8xl text-shadow-lg/50'
+                >Our Services</h1>
             </div>
         </section>
 
     )
 }
 
-export default Hero;
+export default HeroService;
