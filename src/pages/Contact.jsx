@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 import { Link } from "react-router-dom";
-import HeroService from "./components/HeroService";
+import HeroContact from "./components/HeroContact";
 
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
 
         <>
         <Navbar/>
-        <HeroService/>
+        <HeroContact/>
         <section class=" max-w-2xl bg-[#8ED4CC] text-black mt-12 py-12 px-6 mx-4 sm:mx-auto md:px-24 rounded-lg shadow-md shadow-gray-500 mb-16 text-left hover:shadow-lg transition">
                 <h2 class="text-3xl font-bold mb-6 text-center underline">To qualify for free services, clients must submit one of the following:</h2>
                 
