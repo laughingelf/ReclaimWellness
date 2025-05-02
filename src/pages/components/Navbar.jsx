@@ -9,7 +9,7 @@ const Navbar = () => {
       {/* Logo / Image */}
       {/* <div className="flex flex-row items-center"> */}
         <Link onClick={() => window.scrollTo(0, 0)} className='flex items-center' to='/home'>
-          <img src='/img/nav-flower2.svg' className='w-10 h-10'/>
+          <img src='/img/nav-flower2.svg' className='w-10 h-10' alt='flower home button'/>
           <h3 className='text-2xl' style={{fontFamily: 'Gwendolyn, cursive', fontWeight: '700', color: 'black'}}>Reclaim Wellness</h3>
         </Link>
       {/* </div> */}
@@ -27,6 +27,8 @@ const Navbar = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden text-black focus:outline-none"
+        id='menu button'
+        title='menu button'
       >
         <svg
           className="w-6 h-6"

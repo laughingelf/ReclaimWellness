@@ -7,7 +7,11 @@ const HeroAbout = () => {
             <picture>
                 <source srcSet="/img/rws-hero2.webp" type="image/webp" />
                 <source srcSet="/img/rws-hero2.png" type="image/jpeg" />
-                <img className="w-full h-full object-cover" src="/img/rws-hero2.png" alt="Ocean sunset with close-up of wet stones on the shore and delicate floral line art overlay, nature and wellness theme" />
+                <img className="w-full h-full object-cover" 
+                src="/img/rws-hero2.png" 
+                alt="Ocean sunset with close-up of wet stones on the shore and delicate floral line art overlay, nature and wellness theme"
+                loading="eager"
+                fetchPriority="high" />
             </picture> 
 
             {/* <img 

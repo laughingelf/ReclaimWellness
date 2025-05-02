@@ -76,7 +76,7 @@ const LandingPage = () => {
                         <source srcSet="/img/head-massage.jpg" type="image/jpeg" />
                         <img src="/img/head-massage.jpg" 
                         alt="relaxing head massage"
-                        className="w-full h-auto rounded-lg shadow-lg shadow-gray-600" />
+                        className="w-[24rem] md:w-[32rem] h-auto rounded-lg shadow-lg shadow-gray-600" />
                     </picture> 
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
@@ -137,7 +137,7 @@ const LandingPage = () => {
                     <source srcSet="/img/book-img.webp" type="image/webp" />
                     <source srcSet="/img/book-img.svg" type="image/svg" />
                     <img src="/img/book-img.svg"
-                    className="shadow-lg shadow-gray-500 rounded-sm" 
+                    className="w-[24rem] md:w-[32rem] h-auto shadow-lg shadow-gray-500 rounded-sm" 
                     alt="relaxing back massage" />
                 </picture> 
                 <div className="relative">
