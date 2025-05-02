@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Hero = () => {
 
     return (
-        <section className="relative w-full h-[75vh] shadow-lg shadow-gray-500">
+        <section className="relative w-full h-[65vh] md:h-[75vh] shadow-lg shadow-gray-500">
             <picture>
                 <source srcSet="/img/rws-hero2.webp" type="image/webp" media="(min-width: 1200px)" />
                 <source srcSet="/img/rws-hero2-sm.webp" type="image/jpeg" />
