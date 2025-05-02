@@ -20,7 +20,10 @@ const Services = () => {
                 <picture>
                     <source srcSet="/img/massage-ther.webp" type="image/webp" />
                     <source srcSet="/img/massage-ther.jpg" type="image/jpeg" />
-                    <img className="rounded-lg shadow-md shadow-gray-500" src="/img/massage-ther.jpg" alt="Massage therapy benefits for trauma survivors, including stress relief, mood improvement, and emotional awareness, shown with calming pastel illustrations." />
+                    <img className="rounded-lg shadow-md shadow-gray-500" 
+                    src="/img/massage-ther.jpg" alt="Massage therapy benefits for trauma survivors, including stress relief, mood improvement, and emotional awareness, shown with calming pastel illustrations."
+                    loading="eager"
+                    fetchPriority="high" />
                 </picture>
                     <div className="mt-8">
                         <Link onClick={() => window.scrollTo(0, 0)} style={{ backgroundColor: 'rgb(142, 212, 204)' }}
