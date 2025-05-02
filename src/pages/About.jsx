@@ -12,39 +12,16 @@ const About = () => {
         <Navbar/>
             
         <section class="max-w-6xl mx-auto px-6 py-0 space-y-12">
-            {/* <div style={{fontFamily: 'Gwendolyn, cursive'}} className="mt-6 text-black text-6xl md:text-7xl w-fit mx-auto rounded-lg shadow-md hover:shadow-lg transition shadow-gray-800">
-                <div className="relative mt-6 text-black text-6xl md:text-7xl overflow-hidden" style={{ fontFamily: 'Gwendolyn, cursive' }}>
-    
-                  
-                    <img 
-                        src="/img/top-flower.svg" 
-                        alt="" 
-                        className="absolute top-0 left-0 w-38 h-38 -translate-x-2 z-5 -translate-y-2 pointer-events-none opacity-70" 
-                        aria-hidden="true"
-                    />
-
-                   
-                    <img 
-                        src="/img/btm-flower.svg" 
-                        alt="" 
-                        className="absolute bottom-0 right-0 w-38 h-38 -translate-x-0 z-5 translate-y-0 pointer-events-none opacity-70"
-                        aria-hidden="true"
-                    />
-
-                    
-                    <h1 className="bg-gray-500 w-fit mx-auto px-12 py-3 rounded-lg  relative z-3">
-                        Check Out Our Staff
-                    </h1>
-
-                </div>
-
-            </div> */}
-
+            
             <HeroAbout/>
             {/* <!-- Profile 1 --> */}
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <img src="/img/nina.webp" alt="Person 1"
-                class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500"/>
+            <picture>
+                <source srcSet="/img/nina.webp" type="image/webp" />
+                <source srcSet="/img/nina.png" type="image/jpeg" />
+                <img class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500"
+                src="/img/nina.png" alt="Owner of nonprofit massage therapy organization smiling warmly, promoting healing and trauma-informed care" />
+            </picture> 
                 <div class="text-black max-w-xl">
                 <h3 class="text-2xl font-semibold mb-2">Nina Roloff</h3>
                 <p>
@@ -62,8 +39,12 @@ const About = () => {
 
             {/* <!-- Profile 2 --> */}
             <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-                <img src="/img/jay.jpg" alt="Person 2"
-                class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500"/>
+            <picture>
+                <source srcSet="/img/jay.webp" type="image/webp" />
+                <source srcSet="/img/jay.jpg" type="image/jpeg" />
+                <img class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500" src="/img/jay.jpg" 
+                alt="Massage therapist at nonprofit clinic providing trauma-informed care with compassion and professionalism" />
+            </picture> 
                 <div class="text-black max-w-xl">
                 <h3 class="text-2xl font-semibold mb-2">Jay Almazan</h3>
                 <p>
@@ -79,9 +60,13 @@ const About = () => {
             </div>
 
             {/* <!-- Profile 3 --> */}
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <img src="/img/more.webp" alt="Person 3"
-                class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500"/>
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-24">
+            <picture>
+                <source srcSet="/img/more.webp" type="image/webp" />
+                <source srcSet="/img/more.png" type="image/jpeg" />
+                <img class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500" src="/img/more.png" 
+                alt="Massage therapist performing relaxing back massage on client in a calming spa setting" />
+            </picture> 
                 <div class="text-black max-w-xl">
                 <h3 class="text-2xl font-semibold mb-2">More to come...</h3>
                 <p>Looking for my dream team!</p>

@@ -4,11 +4,11 @@ const HeroDonate = () => {
 
     return (
         <section className="relative w-full h-[25vh] md:h-[30vh] shadow-lg shadow-gray-500">
-            <img 
-                src="/img/rws-hero2.png"
-                className="w-full h-full object-cover"
-                alt="Hero"
-            />
+            <picture>
+                <source srcSet="/img/rws-hero2.webp" type="image/webp" />
+                <source srcSet="/img/rws-hero2.png" type="image/jpeg" />
+                <img className="w-full h-full object-cover" src="/img/rws-hero2.png" alt="Ocean sunset with close-up of wet stones on the shore and delicate floral line art overlay, nature and wellness theme" />
+            </picture> 
 
             {/* <img 
             src="/img/vet-owned.webp" 

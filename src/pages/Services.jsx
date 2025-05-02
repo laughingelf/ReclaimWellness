@@ -17,11 +17,11 @@ const Services = () => {
                 
                 {/* <!-- Image --> */}
                 <div class="w-full md:w-1/2">
-                    <img
-                        src="/img/massage-ther.jpg"
-                        alt="Massage Therapy Services"
-                        class="rounded-lg shadow-lg object-cover w-full h-auto"
-                    />
+                <picture>
+                    <source srcSet="/img/massage-ther.webp" type="image/webp" />
+                    <source srcSet="/img/massage-ther.jpg" type="image/jpeg" />
+                    <img className="rounded-lg shadow-md shadow-gray-500" src="/img/massage-ther.jpg" alt="Massage therapy benefits for trauma survivors, including stress relief, mood improvement, and emotional awareness, shown with calming pastel illustrations." />
+                </picture>
                     <div className="mt-8">
                         <Link onClick={() => window.scrollTo(0, 0)} style={{ backgroundColor: 'rgb(142, 212, 204)' }}
                         className='text-2xl py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition'

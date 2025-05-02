@@ -71,11 +71,13 @@ const LandingPage = () => {
 
                     {/* Image */}
                     <div className="w-full">
-                    <img 
-                        src="/img/head-massage.jpg" 
-                        alt="Therapeutic Head Massage"
-                        className="w-full h-auto rounded-lg shadow-lg shadow-gray-600"
-                    />
+                    <picture>
+                        <source srcSet="/img/head-massage.webp" type="image/webp" />
+                        <source srcSet="/img/head-massage.jpg" type="image/jpeg" />
+                        <img src="/img/head-massage.jpg" 
+                        alt="relaxing head massage"
+                        className="w-full h-auto rounded-lg shadow-lg shadow-gray-600" />
+                    </picture> 
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
                         <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='w-full px-12 py-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg' to='/contact'>Contact Us Today</Link>
@@ -131,7 +133,13 @@ const LandingPage = () => {
                     </ul>
 
                 </div>
-                <img id="booking-img" src="/img/book-img.png" className="shadow-lg shadow-gray-500 rounded-sm" />
+                <picture>
+                    <source srcSet="/img/book-img.webp" type="image/webp" />
+                    <source srcSet="/img/book-img.svg" type="image/svg" />
+                    <img src="/img/book-img.svg"
+                    className="shadow-lg shadow-gray-500 rounded-sm" 
+                    alt="relaxing back massage" />
+                </picture> 
                 <div className="relative">
                     <div id="contact-massage" className="bg-gray-500 py-20 px-12 shadow-lg shadow-gray-600 rounded-xl -translate-x-16 relative z-10">
                         <h3 className="text-4xl w-72 mb-8">Contact Us to Schedule an Appointment</h3>
