@@ -12,6 +12,7 @@ const Donate = () => {
         <>
         <Navbar/>
         <HeroDonate/>
+            <Sponsor/>
             <DonationOptions/>
 
         <Footer/>

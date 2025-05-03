@@ -2,7 +2,7 @@
 
 const DonationOptions = () => {
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-green-50 to-blue-100 rounded-xl shadow-lg my-16">
+    <div id="donate-options" className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-green-50 to-blue-100 rounded-xl shadow-lg my-16">
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6 underline">Support Reclaim Wellness Trauma Care</h2>
       <p className="text-lg text-center text-gray-600 mb-8">
         Your generosity helps us continue offering wellness and healing programs for our community. Here are a few ways you can donate:

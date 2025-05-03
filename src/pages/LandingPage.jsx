@@ -28,7 +28,7 @@ const LandingPage = () => {
                             <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-12 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Sponsor a Veteran Today</Link>
                         </div>
                         <div>
-                            <Link onClick={() => window.scrollTo(0, 0)} id='learn-btn' className='px-31 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate'>Donate</Link>
+                            <Link id='learn-btn' className='px-31 py-4 rounded-lg shadow-sm shadow-gray-500 hover:shadow-md hover:shadow-gray-500' to='/donate#donate-options'>Donate</Link>
                         </div>
                     </div>
                 </div>
