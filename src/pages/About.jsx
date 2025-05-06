@@ -60,7 +60,29 @@ const About = () => {
             </div>
 
             {/* <!-- Profile 3 --> */}
-            <div class="flex flex-col md:flex-row items-center gap-8 mb-24">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+            <picture>
+                <source srcSet="/img/felicia.webp" type="image/webp" />
+                <source srcSet="/img/felicia.jpg" type="image/jpeg" />
+                <img class="w-55 h-55 md:w-70 md:h-70 object-cover rounded-full shadow-xl shadow-gray-500" src="/img/felicia.jpg" 
+                alt="Massage therapist at nonprofit clinic providing trauma-informed care with compassion and professionalism" />
+            </picture> 
+                <div class="text-black max-w-xl">
+                <h3 class="text-2xl font-semibold mb-2">Felicia Harvey</h3>
+                <p>
+                Felicia is an Air Force veteran who has spent years dedicating her studies to help people feel better mentally and 
+                physically with gentle orthopedics and trauma-informed massage. She has mastered the art of helping her client’s seep 
+                into a relaxed state using slow gentle massage. She has a warm and welcoming energy that can make anyone feel safe
+                 and comfortable. 
+                </p>
+                    <div className="mt-6">
+                        <Link onClick={() => window.scrollTo(0, 0)} className="py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg" id="learn-btn" to='/contact'>Check Availability</Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* <!-- Profile 4 --> */}
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-24">
             <picture>
                 <source srcSet="/img/more.webp" type="image/webp" />
                 <source srcSet="/img/more.png" type="image/jpeg" />
@@ -82,6 +104,8 @@ const About = () => {
                 </div>
                 </div>
             </div>
+
+            
         </section>
 
         
