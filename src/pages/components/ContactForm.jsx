@@ -107,7 +107,7 @@ const ContactForm = () => {
             name="comments"
             rows="4"
             className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={comments} onChange={(e) => setComment(e.target.value)}
+            value={comment} onChange={(e) => setComment(e.target.value)}
           ></textarea>
         </div>
 
