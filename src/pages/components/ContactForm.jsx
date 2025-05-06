@@ -51,6 +51,7 @@ const ContactForm = () => {
         onSubmit={handleSubmit} id='contact-form' name="contact"
         className="max-w-2xl mx-4 sm:mx-auto p-8 sm:p-12 bg-white rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition space-y-6"
       >
+        <input type='hidden' name='form-name' value='contact' />
         {/* Name */}
         <div className="flex flex-col">
           <label htmlFor="name" className="text-gray-700 font-semibold mb-2 text-left">
@@ -61,6 +62,7 @@ const ContactForm = () => {
             id="name"
             name="name"
             className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={name} onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -75,6 +77,7 @@ const ContactForm = () => {
             id="email"
             name="email"
             className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={email} onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -89,6 +92,7 @@ const ContactForm = () => {
             id="phone"
             name="phone"
             className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={phone} onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>
@@ -103,6 +107,7 @@ const ContactForm = () => {
             name="comments"
             rows="4"
             className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={comments} onChange={(e) => setComment(e.target.value)}
           ></textarea>
         </div>
 
@@ -117,6 +122,7 @@ const ContactForm = () => {
               type="file"
               id="file1"
               name="file1"
+              onChange={(e) => setFile1(e.target.files)}
               className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -130,6 +136,7 @@ const ContactForm = () => {
               type="file"
               id="file2"
               name="file2"
+              onChange={(e) => setFile2(e.target.files)}
               className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -143,6 +150,7 @@ const ContactForm = () => {
               type="file"
               id="file3"
               name="file3"
+              onChange={(e) => setFile3(e.target.files)}
               className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
