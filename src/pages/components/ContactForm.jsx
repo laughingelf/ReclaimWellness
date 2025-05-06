@@ -49,6 +49,8 @@ const ContactForm = () => {
     
       <form
         onSubmit={handleSubmit} id='contact-form' name="contact"
+        encType="multipart/form-data"
+        data-netlify='true'
         className="max-w-2xl mx-4 sm:mx-auto p-8 sm:p-12 bg-white rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition space-y-6"
       >
         <input type='hidden' name='form-name' value='contact' />
