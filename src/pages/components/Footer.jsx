@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-white text-black py-8 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 {/* Navigation Links */}
                 <div>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
 
                 {/* Email Signup Form */}
-                <div>
+                {/* <div>
                 <h4 className="text-xl font-semibold mb-4">Join Our Email List</h4>
                 <p className="text-sm mb-4">Stay up to date with our latest news and events.</p>
                 <form className="flex flex-col sm:flex-row gap-2">
@@ -54,7 +54,7 @@ const Footer = () => {
                     Subscribe
                     </button>
                 </form>
-                </div>
+                </div> */}
 
             </div>
         </footer>
