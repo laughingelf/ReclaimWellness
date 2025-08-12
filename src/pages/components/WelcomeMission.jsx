@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, ShieldCheck, BadgeCheck } from "lucide-react";
-import { fadeUp } from "./animations";
+import { fadeUp } from "./Animations";
 
 const WelcomeMission = () => {
   return (

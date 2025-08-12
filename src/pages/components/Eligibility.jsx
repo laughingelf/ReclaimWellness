@@ -1,7 +1,7 @@
 // components/Eligibility.jsx
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { fadeUp } from "./animations";
+import { fadeUp } from "./Animations";
 
 const Eligibility = () => {
   return (
