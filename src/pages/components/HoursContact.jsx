@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Clock, Phone, Mail } from "lucide-react";
-import { fadeUp } from "./animations";
+import { fadeUp } from "./Animations";
 
 const HoursAndContact = () => {
   const smsUrl = `sms:+18178793087?&body=${encodeURIComponent(
