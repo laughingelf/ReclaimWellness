@@ -2,10 +2,10 @@ import { useState } from "react";
 import SuccessModal from "./SuccessModal";
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [comment, setComment] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [comment, setComment] = useState("");
   const [file1, setFile1] = useState(null);
   const [file2, setFile2] = useState(null);
   const [file3, setFile3] = useState(null);
@@ -16,25 +16,22 @@ const ContactForm = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('form-name', 'contact');
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('comments', comment);
-    if (file1) formData.append('file1', file1);
-    if (file2) formData.append('file2', file2);
-    if (file3) formData.append('file3', file3);
+    formData.append("form-name", "contact");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("comments", comment);
+    if (file1) formData.append("file1", file1);
+    if (file2) formData.append("file2", file2);
+    if (file3) formData.append("file3", file3);
 
-    fetch('/', {
-      method: 'POST',
-      body: formData,
-    })
+    fetch("/", { method: "POST", body: formData })
       .then(() => {
         setShowModal(true);
-        setName('');
-        setEmail('');
-        setPhone('');
-        setComment('');
+        setName("");
+        setEmail("");
+        setPhone("");
+        setComment("");
         setFile1(null);
         setFile2(null);
         setFile3(null);
@@ -44,25 +41,21 @@ const ContactForm = () => {
 
   return (
     <>
-      {/* Hidden form for Netlify to detect */}
+      {/* Netlify detection form (hidden) */}
       <form name="contact" netlify hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
-        <textarea name="comments"></textarea>
+        <textarea name="comments" />
         <input type="file" name="file1" />
         <input type="file" name="file2" />
         <input type="file" name="file3" />
       </form>
 
-      <SuccessModal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        title="Reclaim Wellness"
-      >
+      <SuccessModal show={showModal} onClose={() => setShowModal(false)} title="Reclaim Wellness">
         <p>
-          Thank you for contacting Reclaim Wellness. We have received your message, and our team will get back to 
-          you as soon as possible. We look forward to working with you and supporting you on your wellness journey!
+          Thank you for contacting Reclaim Wellness. We’ve received your message and will reply as soon as
+          possible. We look forward to supporting your healing journey.
         </p>
       </SuccessModal>
 
@@ -72,124 +65,176 @@ const ContactForm = () => {
         method="POST"
         data-netlify="true"
         encType="multipart/form-data"
-        className="max-w-2xl mx-4 sm:mx-auto p-8 sm:p-12 bg-white rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition space-y-6"
+        className="max-w-3xl mx-4 sm:mx-auto relative rounded-2xl bg-[var(--surface)] ring-1 ring-[var(--line-200)] shadow-lg overflow-hidden"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        {/* gentle brand wash */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--teal-50)] via-[var(--surface)] to-[var(--surface)]" />
+        <div className="relative p-6 sm:p-10 space-y-8 text-[var(--ink-900)]">
+          <input type="hidden" name="form-name" value="contact" />
 
-        {/* Name */}
-        <div className="flex flex-col">
-          <label htmlFor="name" className="text-gray-700 font-semibold mb-2 text-left">
-            Name:
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
+          {/* Heading */}
+          <header className="space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-bold">Send us a message</h2>
+            <p className="text-[var(--ink-700)]">
+              We typically respond within 1–2 business days. If you’re a veteran or low-income client,
+              feel free to mention eligibility in your message.
+            </p>
+          </header>
 
-        {/* Email */}
-        <div className="flex flex-col">
-          <label htmlFor="email" className="text-gray-700 font-semibold mb-2 text-left">
-            Email:
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+          {/* Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Name */}
+            <div className="flex flex-col">
+              <label htmlFor="name" className="mb-2 font-semibold text-[var(--ink-900)]">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autoComplete="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full rounded-xl bg-white px-4 py-3 ring-1 ring-[var(--line-200)]
+                           placeholder:text-slate-400 focus:outline-none focus:ring-2
+                           focus:ring-[var(--teal-600)]"
+                placeholder="Jane Doe"
+              />
+            </div>
 
-        {/* Phone */}
-        <div className="flex flex-col">
-          <label htmlFor="phone" className="text-gray-700 font-semibold mb-2 text-left">
-            Phone:
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-        </div>
+            {/* Email */}
+            <div className="flex flex-col">
+              <label htmlFor="email" className="mb-2 font-semibold text-[var(--ink-900)]">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded-xl bg-white px-4 py-3 ring-1 ring-[var(--line-200)]
+                           placeholder:text-slate-400 focus:outline-none focus:ring-2
+                           focus:ring-[var(--teal-600)]"
+                placeholder="you@example.com"
+              />
+            </div>
 
-        {/* Comment */}
-        <div className="flex flex-col">
-          <label htmlFor="comments" className="text-gray-700 font-semibold mb-2 text-left">
-            Comments:
-          </label>
-          <textarea
-            id="comments"
-            name="comments"
-            rows="4"
-            className="w-full px-4 py-2 border bg-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          ></textarea>
-        </div>
+            {/* Phone */}
+            <div className="flex flex-col">
+              <label htmlFor="phone" className="mb-2 font-semibold text-[var(--ink-900)]">
+                Phone
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full rounded-xl bg-white px-4 py-3 ring-1 ring-[var(--line-200)]
+                           placeholder:text-slate-400 focus:outline-none focus:ring-2
+                           focus:ring-[var(--teal-600)]"
+                placeholder="(555) 555-5555"
+              />
+            </div>
 
-        {/* File Uploads */}
-        <div className="flex flex-col items-center bg-white p-4 rounded-md shadow-inner">
-          <div className="w-full mb-4">
-            <label htmlFor="file1" className="block text-gray-700 font-semibold mb-2 text-center">
-              File Attachment 1
-            </label>
-            <input
-              type="file"
-              id="file1"
-              name="file1"
-              onChange={(e) => setFile1(e.target.files[0])}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            {/* Spacer to balance grid */}
+            <div className="hidden md:block" />
+
+            {/* Comments (full width) */}
+            <div className="md:col-span-2 flex flex-col">
+              <label htmlFor="comments" className="mb-2 font-semibold text-[var(--ink-900)]">
+                How can we help?
+              </label>
+              <textarea
+                id="comments"
+                name="comments"
+                rows={5}
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                className="w-full rounded-xl bg-white px-4 py-3 ring-1 ring-[var(--line-200)]
+                           placeholder:text-slate-400 focus:outline-none focus:ring-2
+                           focus:ring-[var(--teal-600)]"
+                placeholder="Share anything you’re comfortable with. If you’re asking about eligibility, add what you plan to submit."
+              />
+              <p className="mt-2 text-sm text-[var(--ink-700)]">
+                Please do not include sensitive medical details.
+              </p>
+            </div>
           </div>
 
-          <div className="w-full mb-4">
-            <label htmlFor="file2" className="block text-gray-700 font-semibold mb-2 text-center">
-              File Attachment 2
-            </label>
-            <input
-              type="file"
-              id="file2"
-              name="file2"
-              onChange={(e) => setFile2(e.target.files[0])}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+          {/* Files */}
+          <fieldset className="space-y-4">
+            <legend className="font-semibold text-[var(--ink-900)]">Attachments (optional)</legend>
 
-          <div className="w-full mb-6">
-            <label htmlFor="file3" className="block text-gray-700 font-semibold mb-2 text-center">
-              File Attachment 3
-            </label>
-            <input
-              type="file"
-              id="file3"
-              name="file3"
-              onChange={(e) => setFile3(e.target.files[0])}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-        </div>
+            <div>
+              <label htmlFor="file1" className="block text-sm mb-1 text-[var(--ink-700)]">
+                File Attachment 1
+              </label>
+              <input
+                id="file1"
+                name="file1"
+                type="file"
+                onChange={(e) => setFile1(e.target.files?.[0] || null)}
+                className="block w-full text-[var(--ink-700)] bg-white rounded-xl ring-1 ring-[var(--line-200)]
+                           file:mr-4 file:rounded-md file:border-0 file:bg-[var(--teal-700)] file:text-white
+                           file:px-4 file:py-2 hover:file:bg-[var(--teal-600)]
+                           focus:outline-none focus:ring-2 focus:ring-[var(--teal-600)]"
+              />
+            </div>
 
-        {/* Submit Button */}
-        <div className="text-center">
-          <button
-            type="submit"
-            id="learn-btn"
-            className="bg-blue-600 text-black px-8 py-3 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition"
-          >
-            Submit
-          </button>
+            <div>
+              <label htmlFor="file2" className="block text-sm mb-1 text-[var(--ink-700)]">
+                File Attachment 2
+              </label>
+              <input
+                id="file2"
+                name="file2"
+                type="file"
+                onChange={(e) => setFile2(e.target.files?.[0] || null)}
+                className="block w-full text-[var(--ink-700)] bg-white rounded-xl ring-1 ring-[var(--line-200)]
+                           file:mr-4 file:rounded-md file:border-0 file:bg-[var(--teal-700)] file:text-white
+                           file:px-4 file:py-2 hover:file:bg-[var(--teal-600)]
+                           focus:outline-none focus:ring-2 focus:ring-[var(--teal-600)]"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="file3" className="block text-sm mb-1 text-[var(--ink-700)]">
+                File Attachment 3
+              </label>
+              <input
+                id="file3"
+                name="file3"
+                type="file"
+                onChange={(e) => setFile3(e.target.files?.[0] || null)}
+                className="block w-full text-[var(--ink-700)] bg-white rounded-xl ring-1 ring-[var(--line-200)]
+                           file:mr-4 file:rounded-md file:border-0 file:bg-[var(--teal-700)] file:text-white
+                           file:px-4 file:py-2 hover:file:bg-[var(--teal-600)]
+                           focus:outline-none focus:ring-2 focus:ring-[var(--teal-600)]"
+              />
+            </div>
+          </fieldset>
+
+          {/* Submit */}
+          <div className="pt-2 text-center">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--teal-700)]
+                         hover:bg-[var(--teal-600)] text-white font-semibold px-8 py-3 shadow-md transition"
+            >
+              Submit
+            </button>
+            <p className="mt-3 text-xs text-[var(--ink-700)]">
+              By submitting, you agree to be contacted by Reclaim Wellness about your request.
+            </p>
+          </div>
         </div>
       </form>
     </>

@@ -1,79 +1,119 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const ServicesSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const toggleDropdown = (index) => setOpenIndex(openIndex === index ? null : index);
 
-  const toggleDropdown = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  // tweak this to make the decorative flowers stronger/lighter
+  const decorOpacity = 0.28;
+  // tweak this to make the gradient wash lighter/stronger
+  const washOpacity = 0.12;
 
   const services = [
     {
       title: "Trauma-Informed Massage",
       description:
-        "This massage involves communication to keep you in a relaxed state without triggering intense emotions. Your massage therapist may use a combination of gentle massage, rocking, guided breathwork/meditation, body scanning, fascia release, and cold/hot therapy. The massage is completely customizable with the massage therapist's suggestions.",
+        "This massage involves communication to keep you in a relaxed state without triggering intense emotions. Your therapist may use gentle massage, rocking, guided breathwork/meditation, body scanning, fascia release, and cold/hot therapy. The session is fully customizable with therapist recommendations.",
     },
     {
       title: "Somatic Movement Massage",
       description:
-        "This massage is unique because the client may remain fully clothed. The full session is based on somatic modalities beginning with conscious breathwork, a grounding exercise, and a jostling massage to release tense muscles. This massage requires no pressure to be applied making it a great choice for clients with arthritis, fibromyalgia, MS, or any kind of tenderness.",
+        "A unique session where the client may remain fully clothed. We use somatic modalities: conscious breathwork, grounding, and jostling to release tension. No pressure is required—great for arthritis, fibromyalgia, MS, or general tenderness.",
     },
     {
       title: "Deep Relaxation Massage",
       description:
-        "This massage is meant to ease stress and help you take a break from reality. Your massage therapist may use a combination of gentle massage, rocking, guided breathwork/meditation, scalp massage, reflexology and cold/hot therapy. The massage is completely customizable with the massage therapist's suggestions.",
+        "Designed to ease stress and offer a true reset. Your therapist may include gentle massage, rocking, guided breath/meditation, scalp work, reflexology, and temperature therapy. The session is tailored to your needs.",
     },
   ];
 
   return (
-    <section className="my-16 px-4 text-black">
-        <div className="max-w-md mx-auto flex flex-col gap-6">
-          {services.map((service, index) => (
-            <div key={index}>
-              {/* Card */}
-              <div
-                className="relative overflow-hidden flex flex-col justify-between items-center bg-gray-500 rounded-xl shadow-md shadow-gray-500 p-6 text-center hover:shadow-lg transition"
-              >
-                {/* Decorative Images */}
+    <section className="my-16 px-4 text-[var(--ink-900)]">
+      <div className="max-w-2xl mx-auto space-y-6">
+        {services.map((service, index) => {
+          const isOpen = openIndex === index;
+          const triggerId = `svc-trigger-${index}`;
+          const panelId = `svc-panel-${index}`;
+
+          return (
+            <div key={service.title}>
+              {/* TILE (keeps original gray bg + flowers) */}
+              <article className="relative overflow-hidden rounded-2xl bg-gray-500 shadow-md shadow-gray-500">
+                {/* very subtle gradient wash over the gray */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white pointer-events-none"
+                  style={{ opacity: washOpacity, zIndex: 0 }}
+                />
+
+                {/* decorative flowers (original assets, nicer sizes) */}
                 <img
                   src="/img/top-flower.svg"
                   alt=""
                   aria-hidden="true"
-                  className="absolute top-0 left-0 w-75 h-75 -translate-x-8 -translate-y-4 z-0"
+                  className="absolute -top-6 -left-6 w-40 h-40 pointer-events-none"
+                  style={{ opacity: decorOpacity, zIndex: 1 }}
                 />
                 <img
                   src="/img/btm-flower.svg"
                   alt=""
                   aria-hidden="true"
-                  className="absolute bottom-0 right-0 w-75 h-75 z-0"
+                  className="absolute -bottom-6 -right-6 w-44 h-44 pointer-events-none"
+                  style={{ opacity: decorOpacity, zIndex: 1 }}
                 />
 
-                {/* Title */}
-                <div className="relative mb-6 z-10 flex-1 flex items-center justify-center text-center">
-                  <h3 id="card-main-txt" className="text-5xl font-bold">{service.title}</h3>
-                </div>
+                {/* CONTENT */}
+                <div className="relative z-10 p-6 md:p-7 flex flex-col items-center text-center">
+                  <h3 id="card-main-txt" className="text-4xl md:text-5xl font-bold mb-4">
+                    {service.title}
+                  </h3>
 
-                {/* Button */}
-                <button
-                  onClick={() => toggleDropdown(index)}
-                  id='learn-btn'
-                  className="z-10 mt-auto w-full py-4 px-4 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition bg-white font-semibold"
-                >
-                  {openIndex === index ? "Close" : "Learn More"}
-                </button>
-              </div>
-
-              {/* Dropdown shown BELOW the card */}
-              {openIndex === index && (
-                <div className="mt-2 px-4 py-4 bg-white bg-opacity-90 text-black rounded-lg shadow-md">
-                  <p className="text-sm">{service.description}</p>
+                  <button
+                    id={triggerId} 
+                    aria-controls={panelId}
+                    aria-expanded={isOpen}
+                    onClick={() => toggleDropdown(index)}
+                    // uses your #learn-btn styling for brand consistency
+                    className="w-full max-w-sm rounded-lg py-3 px-4 shadow-md hover:shadow-lg transition"
+                    id="learn-btn"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2 font-semibold">
+                      {isOpen ? "Close" : "Learn More"}
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </button>
                 </div>
-              )}
+              </article>
+
+              {/* DROPDOWN (below tile) */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={triggerId}
+                    key="content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mx-1 mt-2 rounded-2xl bg-white/95 ring-1 ring-[var(--line-200)] shadow-md px-5 py-4 text-[var(--ink-700)]">
+                      <p className="text-base leading-relaxed">{service.description}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          ))}
-        </div>
-      </section>
-
+          );
+        })}
+      </div>
+    </section>
   );
 };
 

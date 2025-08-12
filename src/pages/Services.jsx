@@ -2,49 +2,72 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ServicesSection from "./components/ServiceSect";
 import { Link } from "react-router-dom";
-import HeroService from "./components/HeroService";
-
+import CommonHero from "./components/HeroCommon";
 
 const Services = () => {
+  return (
+    <>
+      <Navbar />
+      <CommonHero
+        height="short"
+        image="/img/rws-hero2.webp"
+        // focal="50% 30%"
+        title="Our Services"
+        ctas={{
+            primary: { label: "Book an Appointment", to: "/contact" },
+            secondary: { label: "Donate", to: "/donate#donate-options" },
+            tertiary: { label: "View All Services ↓", onClickId: "services-list" },
+        }}
+        />
 
-    return (
 
-        <>
-        <Navbar/>
-        <HeroService/>
-        <section class="max-w-7xl mx-auto px-6 py-16">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                
-                {/* <!-- Image --> */}
-                <div class="w-full md:w-1/2">
-                <picture>
-                    <source srcSet="/img/massage-ther.webp" type="image/webp" />
-                    <source srcSet="/img/massage-ther.jpg" type="image/jpeg" />
-                    <img className="rounded-lg shadow-md shadow-gray-500" 
-                    src="/img/massage-ther.jpg" alt="Massage therapy benefits for trauma survivors, including stress relief, mood improvement, and emotional awareness, shown with calming pastel illustrations."
-                    loading="eager"
-                    fetchPriority="high" />
-                </picture>
-                    <div className="mt-8">
-                        <Link onClick={() => window.scrollTo(0, 0)} style={{ backgroundColor: 'rgb(142, 212, 204)' }}
-                        className='text-2xl py-3 px-8 rounded-lg shadow-md shadow-gray-500 hover:shadow-lg transition'
-                         to='/contact' >Contact Us</Link>
-                    </div>
-                </div>
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          {/* Image + CTA */}
+          <div className="w-full md:w-1/2">
+            <picture>
+              <source srcSet="/img/massage-ther.webp" type="image/webp" />
+              <source srcSet="/img/massage-ther.jpg" type="image/jpeg" />
+              <img
+                className="rounded-2xl shadow-lg ring-1 ring-[var(--line-200)]"
+                src="/img/massage-ther.jpg"
+                alt="Massage therapy benefits for trauma survivors, including stress relief, mood improvement, and emotional awareness, shown with calming pastel illustrations."
+                loading="eager"
+                fetchPriority="high"
+              />
+            </picture>
 
-                {/* <!-- Services List --> */}
-                <div class="w-full md:w-1/2 text-black bg-white p-6 rounded-lg shadow-md shadow-gray-500">
-                {/* <h2 class="text-4xl font-bold mb-6">Our Services</h2> */}
-                <ServicesSection/>
-                </div>
+            <div className="mt-8">
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--teal-700)] hover:bg-[var(--teal-600)]
+                           text-white text-xl font-semibold px-8 py-3 shadow-md transition"
+              >
+                Contact Us
+              </Link>
             </div>
-        </section>
-        
+          </div>
 
-        <Footer/>
+          {/* Services List Card */}
+          <div className="w-full md:w-1/2">
+            <article className="relative rounded-2xl bg-[var(--surface)] ring-1 ring-[var(--line-200)] shadow-lg overflow-hidden">
+              {/* gentle brand wash */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--teal-50)] via-[var(--surface)] to-[var(--surface)]" />
+              <div className="relative p-6 md:p-8">
+                <h2 className="text-2xl font-bold text-[var(--ink-900)] mb-4">Our Services</h2>
+                <div className="text-[var(--ink-700)]">
+                  <ServicesSection />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        </>
-    )
-}
+      <Footer />
+    </>
+  );
+};
 
 export default Services;
